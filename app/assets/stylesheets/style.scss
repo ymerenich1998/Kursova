@@ -1,0 +1,134 @@
+body {
+background: image-url('123.jpg') repeat;
+}
+
+body a{
+  &:hover, &:focus {
+    text-decoration: none;
+    outline: none;
+    color: #0e8ce4;
+    background-color: transparent;
+    transition: 0.3s ease;
+  }
+}
+
+.navbar {
+width: auto;
+  margin-bottom: 0;
+  background-color: ghostwhite ;
+}
+
+.navbar-airtest {
+  border-color: #e7e7e7;
+  border-radius: 0px;
+}
+
+
+@media (min-width: 768px) {
+  .nav {
+    padding-top: 17px;
+    padding-bottom: 19px;
+  }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #a19a9a;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+}
+
+.nav > li > a {
+  &:hover, &:focus {
+    text-decoration: none;
+    outline: none;
+    color: #0e8ce4;
+    background-color: transparent;
+    transition: 0.3s ease;
+  }
+}
+
+.start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    collor: grey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+ font{
+  font-weight:bold;
+ } 
+}
+
+.tests{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-43%, -50%);
+  .button {
+    width:120px;
+    background-color: blue;
+    border: 0.1px solid black;
+    collor: grey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .red {
+    background-color: red;
+    width:120px;
+    border: 0.1px solid black;
+    collor: grey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.green {
+    background-color: green;
+    width:120px;
+    border: 0.1px solid black;
+    collor: grey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+  font{
+  font-weight:bold;
+ } 
+}
+button {
+background: none;
+background-clip: padding-box;
+display: inline-block;
+border: 0;
+user-select: none;
+-webkit-touch-callout: none;
+-webkit-appearance: button;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+}
+
+.modal-content{
+  background: image-url('124.jpg') repeat;
+  collor: black;
+}
+
+

@@ -1,0 +1,35 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel"><center><%= @question.name %></center></h4>
+    </div>
+    
+    <div class="modal-body">
+    <%=form_for :right, url:question_right_path(@question.id),method: :post, html: {class: 'form-signin'} do |f|%>
+      <% @answers.each do |answer|%>
+
+        <div class="row">
+          <div class="col-md-6">      
+                <%= check_box_tag 'right_answer', answer.id %>
+                <%= f.label answer.name %>
+          </div> 
+        </div>              
+      <% end %>
+      <%=f.submit "Confirm"%>
+    <% end %>
+    </div>
+  
+      <div class="modal-footer"><center>
+        <% if current_user and current_user.admin %>
+          <%= form_for @answer, url:question_answers_path(@question.id) do |f| %>
+            <p><%= f.label "Add Answer"%></p>
+            <p><%= f.text_field :name%>
+            <%= f.check_box(:ans_ques)%></p> 
+           <div><p><%= f.submit "Send" %></p></div>
+          <%end%>
+        <%end%>
+        </center> 
+      </div>
+  </div>
+</div>
