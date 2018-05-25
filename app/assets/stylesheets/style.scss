@@ -71,11 +71,7 @@ width: auto;
 }
 
 .tests{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-43%, -50%);
+  
   .button {
     width:120px;
     background-color: blue;
@@ -132,3 +128,13 @@ user-select: none;
 }
 
 
+.question_block {
+    text-align: center;
+    margin: 5px 0px;
+  a {
+    button {
+      color: white;
+      font-weight: 800;
+    }
+  }
+}

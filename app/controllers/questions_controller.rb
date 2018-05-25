@@ -41,18 +41,19 @@ class QuestionsController < ApplicationController
 
   def right 
     @question = Question.find(params[:question_id])
-    @flag = true
-    @all = params[:right_answer]
+    @flag = false
+    @all = params[:user_answer]
     Answer.where(id: @all).each do |ans|
-      if not ans.ans_ques 
-        @flag=false 
+      if ans.ans_ques 
+        @flag=true
         break
       end
     end
-    if @flag 
-    else
-      redirect_to question_path(@question.id)
+    pp @flag
+    respond_to do |format|
+      format.js
     end
+
   end
 
   private
