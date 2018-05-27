@@ -1,3 +1,4 @@
+
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
@@ -7,24 +8,28 @@
     
     <div class="modal-body">
     <%=form_for :right, url: question_right_path(@question.id), method: :post, html: {class: 'form-signin'}, remote: true do |f|%>
-      <% @answers.each do |answer|%>
+    <div class="container">
+    <div class="row">
 
-        <div class="row">
-          <div class="col-md-6">      
-                <%= check_box_tag 'user_answer', answer.id %>
-                <%= f.label answer.name %>
-          </div> 
-        </div>              
+      <% @answers.each do |answer|%>   
+      <div class="col-md-12 row">
+        <label>
+                <h4><%= radio_button_tag 'user_answer', answer.id %>
+                <%= answer.name%></h4>
+        </label>
+        </div>
       <% end %>
-      <%=f.submit "Confirm"%>
+      <%=f.submit "Confirm", class: "btn cust-btn", id: "btn-registration", style: "font-size: 20px;letter-spacing: 1px;"%>
     <% end %>
+    </div>
+    </div>
     </div>
   
       <div class="modal-footer"><center>
         <% if current_user and current_user.admin %>
           <%= form_for @answer, url:question_answers_path(@question.id) do |f| %>
-            <p><%= f.label "Add Answer"%></p>
-            <p><%= f.text_field :name%>
+            <%= f.label "Add Answer"%>
+            <p><%= f.text_field :name, placeholder: "Enter your Answer"%>
             <%= f.check_box(:ans_ques)%></p> 
            <div><p><%= f.submit "Send" %></p></div>
           <%end%>

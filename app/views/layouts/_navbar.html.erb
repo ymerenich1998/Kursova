@@ -13,18 +13,20 @@
             <% if current_user.nil? %>
           <li>
             <%= link_to user_session_path do %>
-            <i class="zmdi zmdi-sign-in"></i> <%= t('login') %>
+            <%= t('login') %> <i class="fa fa-sign-in"></i> 
             <% end %>
           </li>
          <% else %>
           <% if current_user != nil and current_user.admin %>
             <li>
-            <%= link_to "new test", new_question_path%>
+            <%= link_to new_question_path do%>
+            <%= t('Add question') %> <i class="fa fa-plus-circle"></i> 
+            <% end %>
            </li>
           <% end %>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="zmdi zmdi-sign-in"></i> <%= t('logout') %>
+              <%= t('logout') %> <i class="fa fa-sign-out"></i> 
             <% end %>
           </li>
         <% end %>
