@@ -12,4 +12,5 @@ ActiveAdmin.register Question do
 #   permitted
 # end
 
+permit_params :name
 end
