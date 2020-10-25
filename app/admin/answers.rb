@@ -13,5 +13,5 @@ ActiveAdmin.register Answer do
 # end
 
 
-permit_params :ans_ques, :name
+permit_params :ans_ques, :name, :question_id
 end

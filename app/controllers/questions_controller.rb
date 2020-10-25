@@ -1,10 +1,14 @@
 class QuestionsController < ApplicationController
 	before_action :authenticate_user!
   before_action :set_question, only: [:show,:edit,:update,:destroy]
-  
+
   def new
-  @question = Question.new
-  end 
+		if current_user.admin
+  		@question = Question.new
+		else
+			redirect_to root_path
+		end
+  end
 
   def show
       @answers = Answer.where(question_id: @question.id)
@@ -25,7 +29,7 @@ class QuestionsController < ApplicationController
     	end
     end
   end
-  
+
   def destroy
   	@question.destroy
   	redirect_to root_path
@@ -40,12 +44,12 @@ class QuestionsController < ApplicationController
   end
 
 
-  def right 
+  def right
     @question = Question.find(params[:question_id])
     @flag = false
     @all = params[:user_answer]
     Answer.where(id: @all).each do |ans|
-      if ans.ans_ques 
+      if ans.ans_ques
         @flag=true
         break
       end
@@ -60,7 +64,7 @@ class QuestionsController < ApplicationController
   private
   	def questions_params
   		params.require(:question).permit(:name)
-	
+
   	end
 
   	def set_question

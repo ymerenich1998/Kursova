@@ -1,5 +1,13 @@
+*{
+  transition: all .5s;
+  &:focus{
+    outline: none;
+  }
+}
+
 body {
-background: image-url('123.jpg') repeat;
+  background-color: #e5e5e5!important;
+  overflow-x: hidden;
 }
 
 body a{
@@ -13,9 +21,11 @@ body a{
 }
 
 .navbar {
-width: auto;
-  margin-bottom: 0;
-  background-color: ghostwhite ;
+  width: auto;
+  background-color: white;
+  .navbar-right{
+    padding-top: 10px;
+  }
 }
 
 .navbar-airtest {
@@ -25,10 +35,6 @@ width: auto;
 
 
 @media (min-width: 768px) {
-  .nav {
-    padding-top: 17px;
-    padding-bottom: 19px;
-  }
   .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -58,60 +64,74 @@ width: auto;
   .button {
     background-color: #4CAF50;
     border: none;
-    collor: grey;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 10px;    
+    border-radius: 10px;
+    transition: all 1s;
+    &:hover{
+      background-color: blue;
+    }
+    &:focus{
+      outline: none;
+    }
   }
  font{
   font-weight:bold;
- } 
+ }
 }
 
 .tests{
-  
+
   .button {
     width:120px;
-    background-color: blue;
-    border: 0.1px solid black;
-    collor: grey;
+    background-color: grey;
+    border: 0;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 10px;    
+    border-radius: 10px;
+    transition: all 1s;
+    &:hover{
+      background-color: blue;
+    }
+    &:focus{
+      outline: none;
+    }
   }
   .red {
-    border-radius: 10px;  
-    background-color: red;
-    width:120px;
-    border: 0.1px solid black;
-    collor: grey;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-.green {
     border-radius: 10px;
-    background-color: green;
-    width:120px;
-    border: 0.1px solid black;
-    collor: grey;
+    background-color: red;
+    width: 120px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
+    &:hover{
+      background-color: red;
+    }
+  }
+  .green {
+      border-radius: 10px;
+      background-color: green;
+      width:120px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      &:hover{
+        background-color: green;
+      }
+  }
   font{
   font-weight:bold;
- } 
+ }
 }
 button {
 background: none;
@@ -127,8 +147,7 @@ user-select: none;
 }
 
 .modal-content{
-  background: image-url('124.jpg') repeat;
-  collor: black;
+  background: white;
   h4{
     font-weight: 800;
   }
@@ -214,7 +233,6 @@ span.input-group-addon i {
     background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
     background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
     background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
 }
 
 
@@ -222,7 +240,14 @@ span.input-group-addon i {
 .cust-btn{
   margin-bottom: 10px;
   background-color: #ffffff;
-  border-width: 1px;
-  border-color: grey;
-  color: black;
+  color: blue;
+  border: 1px solid blue;
+  transition: all 1s;
+  &:hover{
+    color: white;
+    background-color: blue;
+  }
+  &:focus{
+    outline: none;
+  }
 }
